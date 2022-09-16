@@ -48,6 +48,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "lunarvim/darkplus.nvim"
+  use 'Mofiqul/vscode.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -92,32 +93,37 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use 'nvim-treesitter/nvim-treesitter-context' -- Shows the context of the currently visible buffer contents
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use 'voldikss/vim-floaterm'
 
   -- Tmux
   use { 'alexghergh/nvim-tmux-navigation', config = function()
-        require'nvim-tmux-navigation'.setup {
-            disable_when_zoomed = true, -- defaults to false
-            keybindings = {
-                left = "<C-h>",
-                down = "<C-j>",
-                up = "<C-k>",
-                right = "<C-l>",
-                last_active = "<C-\\>",
-                next = "<C-Space>",
-            }
-        }
-    end
+    require 'nvim-tmux-navigation'.setup {
+      disable_when_zoomed = true, -- defaults to false
+      keybindings = {
+        left = "<C-h>",
+        down = "<C-j>",
+        up = "<C-k>",
+        right = "<C-l>",
+        last_active = "<C-\\>",
+        next = "<C-Space>",
+      }
+    }
+  end
   }
+
+  -- Which key
+  use "folke/which-key.nvim"
 
   -- UI
   use {
-  'nvim-lualine/lualine.nvim',
+    'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  use "akinsho/bufferline.nvim"
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
   use "moll/vim-bbye"
 
   -- Automatically set up your configuration after cloning packer.nvim
