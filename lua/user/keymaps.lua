@@ -59,7 +59,7 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", base_opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", base_opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts("toggle sidebar"))
+keymap("n", "<leader>q", ":NvimTreeToggle<cr>", opts("toggle sidebar"))
 
 -- Visual --
 -- Stay in indent mode
@@ -124,6 +124,14 @@ keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",opts(""))
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts(""))
+
+-- Harpoon
+keymap("n", "<leader>a", "<cmd>lua require 'harpoon.mark'.add_file()<cr>", opts("mark file"))
+keymap("n", "<leader>e", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts("view marks"))
+keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts("open file 1"))
+keymap("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts("open file 2"))
+keymap("n", "<leader>k", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts("open file 3"))
+keymap("n", "<leader>l", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts("open file 4"))
 
 wk.register({
   t = {

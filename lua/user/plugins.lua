@@ -86,9 +86,10 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-media-files.nvim"
   use "natecraddock/telescope-zf-native.nvim"
 
-  -- File tree
+  -- File navigation
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+  use 'ThePrimeagen/harpoon'
 
 
   -- Treesitter
