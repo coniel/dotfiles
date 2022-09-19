@@ -76,6 +76,10 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim" -- function signature
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/trouble.nvim"
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main"
+  })
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

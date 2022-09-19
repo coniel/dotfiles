@@ -79,9 +79,51 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", base_opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", base_opts)
 
 -- Telescope
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts("find files"))
-keymap("n", "<leader>g", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", base_opts)
+keymap("n", "<leader>f",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts("find files"))
+keymap("n", "<leader>g",
+  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  base_opts)
 keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts("search files"))
+
+-- Lsp finder find the symbol definition implement reference
+-- if there is no implement it will hide
+-- when you use action in finder like open vsplit then you can
+-- use <C-t> to jump back
+keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts("find definition"))
+
+-- Code action
+keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts("code action"))
+
+-- Rename
+keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts("rename"))
+
+-- Peek Definition
+-- you can edit the definition file in this flaotwindow
+-- also support open/vsplit/etc operation check definition_action_keys
+-- support tagstack C-t jump back
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts("peek definition"))
+
+-- Show line diagnostics
+keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts("line diagnostics"))
+
+-- Show cursor diagnostic
+keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts("cursor diagnostics"))
+
+-- Diagnsotic jump can use `<c-o>` to jump back
+keymap("n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts("previous diagnostic"))
+keymap("n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts("next diagnostic"))
+
+-- Only jump to error
+keymap("n", "gP", "<cmd>lua require 'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>", opts("previous error"))
+keymap("n", "gN", "<cmd>lua require 'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>", opts("next error"))
+
+-- Outline
+keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",opts(""))
+
+-- Hover Doc
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts(""))
 
 wk.register({
   t = {
