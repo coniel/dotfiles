@@ -137,7 +137,8 @@ wk.register({
   t = {
     name = "terminal",
     t = { "<cmd>FloatermToggle<cr>", "toggle" },
-    g = { "<cmd>FloatermNew lazygit<cr>", "git" },
-    d = { "<cmd>FloatermNew lazydocker<cr>", "docker" }
+    g = { "<cmd>FloatermNew --height=0.9 --width=0.9 --title=- lazygit<cr>", "git" },
+    s = { "<cmd>FloatermNew --height=0.8 --width=0.8 --title=- btop<cr>", "stats" },
+    d = { "<cmd>FloatermNew --height=0.9 --width=0.9 --title=- lazydocker<cr>", "docker" }
   },
 }, { prefix = "<leader>" })
