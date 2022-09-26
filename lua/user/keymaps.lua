@@ -126,7 +126,7 @@ keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",opts(""))
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts(""))
 
 -- Harpoon
-keymap("n", "<leader>a", "<cmd>lua require 'harpoon.mark'.add_file()<cr>", opts("mark file"))
+keymap("n", "<leader>m", "<cmd>lua require 'harpoon.mark'.add_file()<cr>", opts("mark file"))
 keymap("n", "<leader>e", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts("view marks"))
 keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts("open file 1"))
 keymap("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts("open file 2"))
