@@ -5,6 +5,6 @@ end
 
 harpoon.setup({
   menu = {
-    width = 80
+    width = 120
   }
 })
