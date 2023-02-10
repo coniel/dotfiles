@@ -99,12 +99,6 @@ keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts("code action"))
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts("rename"))
 
--- Peek Definition
--- you can edit the definition file in this flaotwindow
--- also support open/vsplit/etc operation check definition_action_keys
--- support tagstack C-t jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts("peek definition"))
-
 -- Show line diagnostics
 keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts("line diagnostics"))
 
@@ -126,7 +120,7 @@ keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",opts(""))
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts(""))
 
 -- Harpoon
-keymap("n", "<leader>a", "<cmd>lua require 'harpoon.mark'.add_file()<cr>", opts("mark file"))
+keymap("n", "<leader>m", "<cmd>lua require 'harpoon.mark'.add_file()<cr>", opts("mark file"))
 keymap("n", "<leader>e", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts("view marks"))
 keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts("open file 1"))
 keymap("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts("open file 2"))

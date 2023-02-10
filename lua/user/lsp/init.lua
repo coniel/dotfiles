@@ -10,3 +10,4 @@ require "lsp_signature".setup({
 })
 require("user.lsp.null-ls")
 require("user.lsp.trouble")
+require("user.lsp.settings.volar");
