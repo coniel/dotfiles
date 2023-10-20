@@ -80,12 +80,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", base_opts)
 
 -- Telescope
 keymap("n", "<leader>f",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true, layout_strategy='horizontal', layout_config={width=0.8, height=0.8} }))<cr>",
+  opts("find files"))
+keymap("n", "<leader>F",
+  "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
   opts("find files"))
 keymap("n", "<leader>g",
   "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
   base_opts)
-keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts("search files"))
+--[[ keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts("search files")) ]]
+keymap("n", "<leader>df", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>dF", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
 
 -- Lsp finder find the symbol definition implement reference
 -- if there is no implement it will hide

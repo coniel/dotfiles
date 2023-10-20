@@ -16,12 +16,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -47,7 +41,6 @@ nvim_tree.setup {
   },
   view = {
     width = 60,
-    hide_root_folder = true,
     side = "left",
     mappings = {
       custom_only = false,
@@ -61,6 +54,7 @@ nvim_tree.setup {
     relativenumber = false,
   },
   renderer = {
+    root_folder_label = false,
     highlight_git = true,
     indent_markers = {
       enable = true
